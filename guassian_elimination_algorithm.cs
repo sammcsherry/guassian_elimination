@@ -17,8 +17,6 @@ namespace Guassian_Elimination
                 if(matrix.values[current_row][coefficient_index] != 0)
                  make_coefficient_pivot(matrix.values[current_row], coefficient_index);
 
-           
-
             if (matrix.values[current_row][coefficient_index] == 1 && matrix.values[current_row + increment][coefficient_index] != 0)
                 eliminate_coefficient(matrix, current_row, current_row + increment, coefficient_index, increment);
 
@@ -43,8 +41,6 @@ namespace Guassian_Elimination
                 return true;
             return false;
         }
-
-
         public static Guassian_Matrix eliminate_coefficient(Guassian_Matrix matrix, int base_row, int row_to_eliminate_index, int current_coefficient, int increment)
         {
             if (row_to_eliminate_index == matrix.size ||row_to_eliminate_index < 0)
@@ -65,12 +61,9 @@ namespace Guassian_Elimination
             double factor = row_to_eliminate[coefficient_index] / base_row[coefficient_index];
             base_row = mathematical_functions.zip_scalar_array(base_row, factor);
             row_to_eliminate = mathematical_functions.zip_subtract_arrays(row_to_eliminate, base_row);
-            base_row = mathematical_functions.zip_scalar_array(base_row, 1/factor);
+            base_row = mathematical_functions.zip_scalar_array(base_row, 1 / factor);
             return row_to_eliminate;
-            
+
         }
-
     }
-
-    
 }
