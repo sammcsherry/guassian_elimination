@@ -16,7 +16,7 @@ namespace Guassian_Elimination
             if (increment == 1)
                 if(matrix.values[current_row][coefficient_index] != 0)
                  make_coefficient_pivot(matrix.values[current_row], coefficient_index);
-
+// Given this is C are you sure this will work as intended - consdier adding brackets
             if (matrix.values[current_row][coefficient_index] == 1 && matrix.values[current_row + increment][coefficient_index] != 0)
                 eliminate_coefficient(matrix, current_row, current_row + increment, coefficient_index, increment);
 
